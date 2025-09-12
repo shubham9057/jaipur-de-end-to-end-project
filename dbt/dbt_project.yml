@@ -1,8 +1,8 @@
 ## Project
-name: tasty_bytes
+name: de_project
 version: "1.0"
 config-version: 2
-profile: tasty_bytes
+profile: de_project
 
 ## Sources
 model-paths: [models]
@@ -18,7 +18,7 @@ clean-targets: [target, dbt_modules]
 
 ## Models
 models:
-  tasty_bytes:
+  de_project:
     staging:
       +materialized: view
     marts:
