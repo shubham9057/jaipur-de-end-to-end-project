@@ -1,0 +1,24 @@
+# Default connection config
+.default: &default
+  type: "snowflake"
+  account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+  warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
+  role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+  user: "{{ env_var('SNOWFLAKE_USERNAME') }}"
+  database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+  schema: "{{ env_var('SNOWFLAKE_SCHEMA') }}"
+  threads: 24
+  query_tag: "de_project-{{ invocation_id }}"
+
+# Default user config
+.human_user: &human_user
+  authenticator: externalbrowser
+
+
+# Project config
+de_project:
+  target: dev
+  outputs:
+    dev:
+      <<: *default
+      <<: *human_user
