@@ -1,5 +1,6 @@
-dbt_packages/
-dbt_internal_packages/
+# ignore user files
+.user.yml
+
+### dbt ###
 logs/
-target/
 
